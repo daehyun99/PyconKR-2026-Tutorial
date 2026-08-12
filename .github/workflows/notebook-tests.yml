@@ -13,12 +13,22 @@ on:
 
 jobs:
   notebook-tests:
-    name: Python ${{ matrix.python-version }}
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }} / Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        python-version: ["3.10", "3.14"]
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        python-version:
+          - "3.10"
+          - "3.14"
+
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Checkout code
@@ -30,17 +40,12 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: pip
 
-      - name: Install graphviz
-        run: |
-          sudo apt-get update
-          sudo apt-get install graphviz graphviz-dev -y
-
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install .[all]
-          pip install nbmake
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          python -m pip install nbmake
 
       - name: Run notebooks
         run: |
-          pytest --nbmake notebook-KR/*.ipynb notebook-EN/*.ipynb -v
+          python -m pytest --nbmake notebook-KR/*.ipynb notebook-EN/*.ipynb -v

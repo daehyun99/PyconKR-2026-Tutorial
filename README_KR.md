@@ -20,6 +20,10 @@
 5. 학습된 인과모형을 활용한 확률추론과 인과추론(Inference)을 학습합니다.
 6. 현재 pgmpy에서 진행 중인 인과모형의 모수화(Parameterization) 관련 연구 및 개발 사례를 살펴봅니다.
 
+### How to Start
+
+> [setup의 안내에 따라 설정해 주세요.](/notebook-KR/00_setup.ipynb)
+
 ### Difficulty
 
 초급
