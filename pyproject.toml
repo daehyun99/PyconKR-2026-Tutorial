@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PYCONKR-2026-TUTORIAL"
+version = "0.1.0"
+description = "[Tutorial] Getting Started with Causal Discovery and Causal Inference Using pgmpy"
+requires-python = ">=3.10"
+
+dependencies = [
+    "ipykernel",
+    "skpro",
+    "pgmpy @ git+https://github.com/pgmpy/pgmpy.git@bef9a8b9ee65d11818a6747e2d0c87e2c2c2b2cb",
+    "daft-pgm>=0.1.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
