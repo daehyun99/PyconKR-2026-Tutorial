@@ -13,3 +13,5 @@
 [Social Class, Parental Encouragement, and Educational Aspirations](https://www.jstor.org/stable/2775558?origin=JSTOR-pdf)
 
 [Bayesian networks with a logistic regression model for the conditional probabilities](https://www.sciencedirect.com/science/article/pii/S0888613X08000121)
+
+[Causal Reasoning with Ancestral Graphs](https://www.jmlr.org/papers/volume9/zhang08a/zhang08a.pdf)
